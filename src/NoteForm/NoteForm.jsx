@@ -18,22 +18,31 @@ class NoteForm extends Component {
         })
     }
 
-    writeNote(){
-        this.props.addNote(this.state.newNoteContent);
-        this.setState({
-            newNoteContent: '',
-        })
+    writeNote(e){
+
+        if (e.key === 'Enter' && e.type === 'keypress') {
+            this.props.addNote(this.state.newNoteContent);
+            this.setState({
+                newNoteContent: '',
+            })
+        }
+
+        if ( e.type === 'click' ) {
+            this.props.addNote(this.state.newNoteContent);
+            this.setState({
+                newNoteContent: '',
+            })
+        }
     }
 
     render() {
         return(
             <div className="formWrapper">
                 <input className="noteInput"
-                    placeholder="Write a new note . . . "
+                    placeholder="Write a new note and press enter "
                     value={this.state.newNoteContent}
-                    onChange={this.handleUserInput} />
-                <button className="noteButton"
-                onClick={this.writeNote} >Add Note</button>
+                    onChange={this.handleUserInput} 
+                    onKeyPress={this.writeNote}/>
             </div>
         )
     }

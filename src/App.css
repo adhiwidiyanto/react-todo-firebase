@@ -37,7 +37,7 @@ body {
   text-align: center;
   align-content: center;
   padding:20px 0px 20px 0px;
-  margin-bottom: 6px;
+  margin-bottom: 16px;
   background-color: rgba(0,0,0,0.5);
   text-shadow: 3px 3px 10px #000;
   display: block;
@@ -53,6 +53,7 @@ body {
 }
 
 .notesFooter {
+  margin-top: 16px;
   display: flex;
   flex: 1 1 5%;
   background-color: rgba(0,0,0,0.5);
